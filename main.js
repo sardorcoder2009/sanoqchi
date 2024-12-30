@@ -1,27 +1,25 @@
-const products = [
-    { name: "Telefon", price: 45 },
-    { name: "Kompyuter", price: 550 },
-    { name: "Planshet", price: 120 },
-    { name: "Naushnik", price: 20 },
-    { name: "Televizor", price: 300 },
-];
+const W = document.querySelector('.W')
+const btn = document.querySelector('.btn')
+const inp = document.querySelector('.inp')
+const body = document.querySelector('.body')
 
-const container = document.querySelector('.product');
-const Button = document.querySelector('.btn');
+btn.addEventListener('click' , () => {
+    let app = inp.value;
+    W.innerHTML = app;
 
-function display(items) {
-    container.innerHTML = '';
-    items.forEach(pr => {
-        const div = document.createElement('div');
-        div.className = 'product1';
-        div.innerHTML = `<h3>${pr.name}</h3><br> $${pr.price}`;
-        container.appendChild(div);
-    });
-}
+    if(app === 'black'){
+        body.classList.add('black');
+        W.innerHTML = '';
 
-display(products);
+    }
+    else if(app === 'white'){
+        body.classList.remove('black');
+        W.innerHTML = '';
 
-Button.addEventListener('click', () => {
-    const edProducts = products.filter(product => product.price > 50);
-    display(edProducts);
-});
+   
+    }   
+    
+
+  
+
+})

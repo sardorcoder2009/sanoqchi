@@ -1,18 +1,6 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-  background-color: lime;
-}
-.product {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.product1 {
-  border: 1px solid white;
-  border-radius: 5px;
-  padding: 10px;
+.body{
   background-color: white;
-  width: 150px;
-  text-align: center;
+}
+.black{
+  background-color: black;
 }
