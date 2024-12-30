@@ -1,19 +1,27 @@
-const click = document.querySelector('.click');
-const reset = document.querySelector('.reset');
-const span1 = document.querySelector('.span1');
-const span2 = document.querySelector('.span2');
-const count = document.querySelector('.count');
+const products = [
+    { name: "Telefon", price: 45 },
+    { name: "Kompyuter", price: 550 },
+    { name: "Planshet", price: 120 },
+    { name: "Naushnik", price: 20 },
+    { name: "Televizor", price: 300 },
+];
 
-click.addEventListener('click', function(){
-    let num = Number(count.innerHTML) ;
-    count.innerHTML = ++num;
-    span1.innerHTML = 'Sanash tugmasi';
-    span2.innerHTML = 'marta bosildi.';
-});
+const container = document.querySelector('.product');
+const Button = document.querySelector('.btn');
 
-reset.addEventListener('click', function(){
-    count.innerHTML = 0;
-    span1.innerHTML = 'Tozalandi.';
-    span2.innerHTML = '';
-    count.innerHTML = '';
+function display(items) {
+    container.innerHTML = '';
+    items.forEach(pr => {
+        const div = document.createElement('div');
+        div.className = 'product1';
+        div.innerHTML = `<h3>${pr.name}</h3><br> $${pr.price}`;
+        container.appendChild(div);
+    });
+}
+
+display(products);
+
+Button.addEventListener('click', () => {
+    const edProducts = products.filter(product => product.price > 50);
+    display(edProducts);
 });
